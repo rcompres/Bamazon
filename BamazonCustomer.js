@@ -1,7 +1,6 @@
 var mysql = require 'mysql';
 var pompt = require('prompt');
 
-
 prompt.start();
 
 var connection = mysql.createConnection({
@@ -21,13 +20,10 @@ function listProduct(){
 		if(err) throw err;
 			for (var i=0 i< result.length; i++) {
 				console.log("-------------------------------------------")
-
 			}
-
 	});
 
 };
-
 function buyProduct(){
 	prompt.get(
 	{
@@ -44,7 +40,6 @@ function buyProduct(){
 			checkStock(userChoice.userIDInput, userChoice.userNumberInput);
 	});
 };
-
 function checkStock(userIDInput, userNumberInput) {
 	var currentItemStock = "";
 	var currentItemChoice = "";
@@ -65,5 +60,4 @@ function checkStock(userIDInput, userNumberInput) {
 		showProducts();
 	};
 };
-
 showProducts();
